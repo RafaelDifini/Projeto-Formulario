@@ -1,0 +1,25 @@
+﻿@model ProjetoFormulario.Models.Cliente
+@{
+    ViewData["Subtitle"] = "Adicionar cliente";
+}
+<h2 class="titulo">@ViewBag.Subtitle</h2>
+<hr />
+
+<div class="card bg-light p-5">
+    <form asp-controller="home" asp-action="adicionarCliente">
+        <div class="form-group">
+        @Html.LabelFor(model => model.Nome)
+        <br />
+        @Html.TextBoxFor(model => model.Nome)
+        </div>
+
+        <div class="form-group">
+        @Html.LabelFor(model => model.Telefone)
+        <br />
+        @Html.TextBoxFor(model => model.Telefone)
+        </div>
+        <a asp-controller="home" asp-action="index" class="btn btn-primary text-decoration-none m-2">Voltar</a>
+        <button class="btn btn-primary">Salvar</button>
+
+    </form>
+</div>

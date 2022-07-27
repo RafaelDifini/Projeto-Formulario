@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Subtitle"] = "Menu Inicial";
+}
+
+<h2 class="titulo">@ViewBag.Subtitle</h2>
+<hr />
+
+
+<div class="row">
+    <div class="col-4 text-center card bg-light p-5 m-2">
+        <p class="text-center p-3">Visualização da lista de clientes registrados</p>
+        <a asp-controller="home" asp-action="listaClientes" class="btn-primary text-decoration-none">Lista de clientes</a>
+    </div>
+
+    <div class="col-4 text-center card bg-light p-5 m-2">
+        <p class="text-center p-3">Adicionar novos clientes.</p>
+        <a asp-controller="home" asp-action="adicionarClientes" class="btn-primary text-decoration-none">Adicionar cliente</a>
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Projeto Formulário ASP.NET CORE 3.1  ";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+   @* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />*@
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+<body class="bg-dark text-white">
+    <div class="container-fluid bg-dark text-white pt-3 pb-3">       
+        <h2>@ViewBag.Title</h2>   
+     </div>
+
+    <div class="container-fluid bg-white text-dark pt3- pb-3">
+        <div class="container mt-5 mb-5">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-white pt-3 pb-3 text-center">
+        ASP.NET Core 3.1 &copy; @DateTime.Now.Year
+    </div>
+</body>
+</html>

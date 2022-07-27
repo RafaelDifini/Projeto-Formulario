@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProjetoFormulario.Models.Cliente>
+@{
+    ViewData["Subtitle"] = "Clientes registrados";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="titulo">@ViewBag.Subtitle</h2>
+    </div>
+    <div class="col-6 text-end">
+       <a asp-controller="home" asp-action="adicionarCliente" class="btn-primary text-decoration-none">Adicionar clientes...</a>
+    </div>
+</div>
+
+<!-- apresentação dos dados dos clientes -->
+
+@if (Model.Count() == 0)
+{
+    <p>Não existem clientes registrados.</p>
+}
+else{
+      <table class="table table-striped" >
+          <thead class="thead-dark">
+              <tr>
+                  <th>Nome</th>
+                  <th>Telefone</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.Telefone</td>
+                    <td class="text-end">
+                        <a asp-controller="home" asp-action="editarCliente" asp-route-id="@cliente.Id" class="btn btn-primary"><i class="fa fa-pencil"> Editar</i></a>
+                        <a asp-controller="home" asp-action="excluirCliente" asp-route-id="@cliente.Id" class="btn btn-primary"><i class="fa fa-trash"> Excluir</i></a>
+                    </td>
+                </tr>
+            }
+          </tbody>
+
+
+      </table>
+      <p>Total: <b>@Model.Count()</b></p>
+}
+
+<div>
+    <a asp-controller="home" asp-action="index" class="btn btn-primary text-decoration-none">Voltar</a>
+</div>
